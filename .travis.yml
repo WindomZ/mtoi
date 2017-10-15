@@ -5,12 +5,9 @@ sudo: false
 go: master
 
 before_install:
-  - go get github.com/WindomZ/go-develop-kit/path
-  - go get github.com/PuerkitoBio/goquery
-  - go get github.com/lunny/html2md
   - go get github.com/WindomZ/testify/assert
   - go get github.com/mattn/goveralls
-  - go get github.com/golang/lint/golint
+#  - go get github.com/golang/lint/golint
 
 script:
   - diff -u <(echo -n) <(gofmt -s -d ./)
