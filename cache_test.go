@@ -10,6 +10,7 @@ import (
 var cache *Cache
 
 func TestCache_NewCache(t *testing.T) {
+	cache = NewCache(0, 0)
 	cache = NewCache(2, time.Second)
 }
 
