@@ -10,15 +10,22 @@
 - **Key-Value** base storage structure.
 - **Non-blocking** to write.
 
-### KV
+### KV([kv.go](./kv.go))
 - Value is **single** instance.
 
-### Slice
+### Slice([slice.go](./slice.go))
 - Value is go **slice** structure.
 
-### Cache
+### Cache([cache.go](./cache.go))
 - Value is **single** instance.
 - Support **expire** time.
+
+## Contributing
+
+Welcome to pull requests, report bugs, suggest ideas and discuss 
+**mtoi** on [issues page](https://github.com/WindomZ/mtoi/issues).
+
+If you like it then you can put a :star: on it.
 
 ## License
 
