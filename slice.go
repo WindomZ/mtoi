@@ -34,7 +34,7 @@ func NewSlice(cap int) *Slice {
 func (c *Slice) start() {
 	go func() {
 		for v, ok := <-c.stream; ok; v, ok = <-c.stream {
-			if v != nil {
+			if v != nil && len(c.data) < c.cap {
 				c.lock.Lock()
 				for ; v != nil && ok; v, ok = <-c.stream {
 					c.data = append(c.data, v.Value)
@@ -43,8 +43,8 @@ func (c *Slice) start() {
 						idx = make([]int, 0, 2)
 					}
 					c.tag[v.Key] = append(idx, len(c.data)-1)
-					if len(c.data) > c.cap {
-						c.cap = len(c.data) + 2
+					if len(c.data) >= c.cap {
+						break
 					}
 				}
 				c.lock.Unlock()

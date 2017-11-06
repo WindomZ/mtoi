@@ -11,7 +11,7 @@ var cache *Cache
 
 func TestCache_NewCache(t *testing.T) {
 	cache = NewCache(0, 0)
-	cache = NewCache(2, time.Second)
+	cache = NewCache(20, time.Second)
 }
 
 func TestCache_Put(t *testing.T) {
@@ -22,6 +22,7 @@ func TestCache_Put(t *testing.T) {
 }
 
 func TestCache_Size(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
 	assert.Equal(t, 10, cache.Size())
 }
 

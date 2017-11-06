@@ -31,12 +31,12 @@ func NewKV(cap int) *KV {
 func (c *KV) start() {
 	go func() {
 		for v, ok := <-c.stream; ok; v, ok = <-c.stream {
-			if v != nil {
+			if v != nil && len(c.data) < c.cap {
 				c.lock.Lock()
 				for ; v != nil && ok; v, ok = <-c.stream {
 					c.data[v.Key] = v.Value
-					if len(c.data) > c.cap {
-						c.cap = len(c.data) + 2
+					if len(c.data) >= c.cap {
+						break
 					}
 				}
 				c.lock.Unlock()

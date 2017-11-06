@@ -11,7 +11,7 @@ var kv *KV
 const demo string = "abcdefghijklmnopqrstuvwxyz"
 
 func TestKV_NewKV(t *testing.T) {
-	kv = NewKV(2)
+	kv = NewKV(20)
 }
 
 func TestKV_Put(t *testing.T) {

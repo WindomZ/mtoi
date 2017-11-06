@@ -10,7 +10,7 @@ import (
 var array *Slice
 
 func TestSlice_NewSlice(t *testing.T) {
-	array = NewSlice(2)
+	array = NewSlice(20)
 }
 
 func TestSlice_Put(t *testing.T) {
@@ -21,6 +21,7 @@ func TestSlice_Put(t *testing.T) {
 }
 
 func TestSlice_Size(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
 	assert.Equal(t, 10, array.Size())
 }
 
