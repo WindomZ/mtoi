@@ -2,6 +2,7 @@ package mtoi
 
 import (
 	"testing"
+	"time"
 
 	"github.com/WindomZ/testify/assert"
 )
@@ -22,6 +23,7 @@ func TestKV_Put(t *testing.T) {
 }
 
 func TestKV_Size(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
 	assert.Equal(t, 10, kv.Size())
 }
 
@@ -48,6 +50,7 @@ func TestKV_Clean(t *testing.T) {
 }
 
 func TestKV_Size2(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
 	assert.Equal(t, 0, kv.Size())
 }
 
@@ -61,6 +64,7 @@ func TestKV_MulPut(t *testing.T) {
 }
 
 func TestKV_Size3(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
 	assert.Equal(t, 10, kv.Size())
 }
 
