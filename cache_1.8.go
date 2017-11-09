@@ -112,8 +112,6 @@ func (c *Cache) Get(k string) (interface{}, bool) {
 }
 
 func (c *Cache) Contain(k string) bool {
-	c.lock.RLock()
 	_, ok := c.Get(k)
-	c.lock.RUnlock()
 	return ok
 }
