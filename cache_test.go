@@ -21,12 +21,9 @@ func TestCache_Put(t *testing.T) {
 	}
 }
 
-func TestCache_Size(t *testing.T) {
-	time.Sleep(time.Millisecond * 100)
-	assert.Equal(t, 10, cache.Size())
-}
-
 func TestCache_Get(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
+
 	for i := 0; i < 10; i++ {
 		k := string(demo[i])
 		v, ok := cache.Get(k)
@@ -44,10 +41,6 @@ func TestCache_Contain(t *testing.T) {
 	assert.False(t, cache.Contain("z"))
 }
 
-func TestCache_Size2(t *testing.T) {
-	assert.Equal(t, 10, cache.Size())
-}
-
 func TestCache_Get2(t *testing.T) {
 	time.Sleep(time.Second * 2)
 	for i := 0; i < 10; i++ {
@@ -55,19 +48,6 @@ func TestCache_Get2(t *testing.T) {
 		_, ok := cache.Get(k)
 		assert.False(t, ok)
 	}
-}
-
-func TestCache_Size3(t *testing.T) {
-	time.Sleep(time.Second)
-	assert.Equal(t, 0, cache.Size())
-}
-
-func TestCache_Clean(t *testing.T) {
-	cache.Clean()
-}
-
-func TestCache_Size4(t *testing.T) {
-	assert.Equal(t, 0, cache.Size())
 }
 
 func TestCache_Close(t *testing.T) {
