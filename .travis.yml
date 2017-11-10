@@ -2,7 +2,9 @@ language: go
 
 sudo: false
 
-go: master
+go:
+  - 1.8
+  - master
 
 before_install:
   - go get github.com/WindomZ/testify/assert
