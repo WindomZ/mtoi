@@ -9,7 +9,7 @@ import (
 
 var kv *KV
 
-const demo string = "abcdefghijklmnopqrstuvwxyz"
+const demo = "abcdefghijklmnopqrstuvwxyz"
 
 func TestKV_NewKV(t *testing.T) {
 	kv = NewKV(20)
@@ -22,12 +22,9 @@ func TestKV_Put(t *testing.T) {
 	}
 }
 
-func TestKV_Size(t *testing.T) {
-	time.Sleep(time.Millisecond * 100)
-	assert.Equal(t, 10, kv.Size())
-}
-
 func TestKV_Get(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
+
 	for i := 0; i < 10; i++ {
 		k := string(demo[i])
 		v, ok := kv.Get(k)
@@ -45,15 +42,6 @@ func TestKV_Contain(t *testing.T) {
 	assert.False(t, kv.Contain("z"))
 }
 
-func TestKV_Clean(t *testing.T) {
-	kv.Clean()
-}
-
-func TestKV_Size2(t *testing.T) {
-	time.Sleep(time.Millisecond * 100)
-	assert.Equal(t, 0, kv.Size())
-}
-
 func TestKV_MulPut(t *testing.T) {
 	f, stop := kv.MulPut()
 	for i := 10; i < 20; i++ {
@@ -63,12 +51,9 @@ func TestKV_MulPut(t *testing.T) {
 	stop()
 }
 
-func TestKV_Size3(t *testing.T) {
-	time.Sleep(time.Millisecond * 100)
-	assert.Equal(t, 10, kv.Size())
-}
-
 func TestKV_Get2(t *testing.T) {
+	time.Sleep(time.Millisecond * 100)
+
 	for i := 10; i < 20; i++ {
 		k := string(demo[i])
 		v, ok := kv.Get(k)
