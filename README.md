@@ -9,16 +9,29 @@
 
 - **Key-Value** base storage structure.
 - **Non-blocking** to write.
+- **sync.Map** if >= go1.9.
 
 ### KV([kv.go](./kv.go))
 - Value is **single** instance.
+```
+Put(k string, v interface{})
+Get(k string) (v interface{}, ok bool)
+```
 
 ### Slice([slice.go](./slice.go))
 - Value is go **slice** structure.
+```
+Put(k string, v interface{})
+Get(k string) (v []interface{}, ok bool)
+```
 
 ### Cache([cache.go](./cache.go))
 - Value is **single** instance.
 - Support **expire** time.
+```
+Put(k string, v interface{}, expire time.Duration)
+Get(k string) (v interface{}, ok bool)
+```
 
 ## Contributing
 
