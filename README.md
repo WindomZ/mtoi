@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/WindomZ/mtoi.svg?branch=master)](https://travis-ci.org/WindomZ/mtoi)
 [![Coverage Status](https://coveralls.io/repos/github/WindomZ/mtoi/badge.svg?branch=master)](https://coveralls.io/github/WindomZ/mtoi?branch=master)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWindomZ%2Fmtoi.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FWindomZ%2Fmtoi?ref=badge_shield)
 
 > Key-Value structures: KV, Slice, Cache...
 
@@ -43,3 +44,6 @@ If you like it then you can put a :star: on it.
 ## License
 
 [MIT](https://github.com/WindomZ/mtoi/blob/master/LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FWindomZ%2Fmtoi.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FWindomZ%2Fmtoi?ref=badge_large)
